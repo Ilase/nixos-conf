@@ -5,7 +5,7 @@
     		enableCompletion =  true;
     		autosuggestions.enable = true;
     		shellAliases = {
-    			update = "sudo nixos-rebuild switch";
+    			update = "sudo nixos-rebuild switch --flake .#ideapad-3-laptop";
     		};
     		histFile = "$HOME/.zsh_history";
     		ohMyZsh = {

@@ -7,7 +7,6 @@
         modules = [
           ./hosts/ideapad-3-laptop/configuration.nix
           ./modules/shell.nix
-
         ];
       };
     };
