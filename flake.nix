@@ -6,6 +6,8 @@
         system = "x86_64-linux";
         modules = [
           ./hosts/ideapad-3-laptop/configuration.nix
+          ./modules/shell.nix
+
         ];
       };
     };
