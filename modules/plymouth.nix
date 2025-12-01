@@ -1,17 +1,9 @@
-{pkgs, ...}: {
+{pkgs, config, ...}: {
     boot = {
-        enable = true;
-        theme = "rings";
-    };
-    consoleLogLevel = 3;
-    initrd.verbose = false;
-    kernelParams = [
-        "quiet"
-        "splash"
-        "boot.shell_on_fail"
-        "udev.log_priority=3"
-        "rd.systemd.show_status=auto"
-    ];
+        plymouth ={
+            enable = true;
+            theme = "solar";
+        };
 
-    loader.timeout = 2;
+    };
 }

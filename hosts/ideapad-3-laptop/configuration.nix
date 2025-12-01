@@ -2,19 +2,21 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, virtualisation, lib, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ../../modules/plymouth.nix
+
     ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "nixos";
 
 
   # Enable networking
@@ -66,15 +68,15 @@
   };
 
 
-  users.users.ilase = {
-    isNormalUser = true;
-    description = "Ilya Kusukin";
-    extraGroups = [ "networkmanager" "wheel" "docker"];
-    packages = with pkgs; [
-    #  thunderbird
-    ];
-	shell = pkgs.zsh;
-  };
+#  users.users.ilase = {
+#    isNormalUser = true;
+#    description = "Ilya Kusukin";
+#    extraGroups = [ "networkmanager" "wheel" "docker"];
+#    packages = with pkgs; [
+#    #  thunderbird
+#    ];
+#	shell = pkgs.zsh;
+#  };
 
   # Install firefox.
   programs.firefox.enable = true;
