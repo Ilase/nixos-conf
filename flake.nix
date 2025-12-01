@@ -10,11 +10,12 @@
         modules = [
           ./hosts/ideapad-3-laptop/configuration.nix
           ./modules/shell.nix
+          ./modules/packages.nix
           ./modules/users.nix
           ./modules/plymouth.nix
           ./modules/nix-ld.nix
 	       nix-ld.nixosModules.nix-ld
-	        {programs.nix-ld.dev.enable = true; }
+	       {programs.nix-ld.dev.enable = true; }
         ];
       };
     };

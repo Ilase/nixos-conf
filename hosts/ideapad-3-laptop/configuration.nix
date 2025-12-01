@@ -67,56 +67,25 @@
     pulse.enable = true;
   };
 
-
-#  users.users.ilase = {
-#    isNormalUser = true;
-#    description = "Ilya Kusukin";
-#    extraGroups = [ "networkmanager" "wheel" "docker"];
-#    packages = with pkgs; [
-#    #  thunderbird
-#    ];
-#	shell = pkgs.zsh;
-#  };
-
-  # Install firefox.
-  programs.firefox.enable = true;
+    programs.firefox.enable = true;
 
 
 
-	virtualisation.docker.enable = true;
+    virtualisation.docker.enable = true;
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+    nixpkgs.config.allowUnfree = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    	vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    	wget
-	zed-editor
-	lsd
-	nerd-fonts.symbols-only
-	telegram-desktop
-	git
-	jetbrains-toolbox
-	wireguard-ui
-	#jetbrains.idea-ultimate
-	nixd
- ];
-
-	# nixpkgs.config.allowUnfree = true;
-	nixpkgs.config.nvidia.acceptLicense = true;
-
-	### NVIDIA
-	hardware.opengl.enable = true;
-	services.xserver.videoDrivers = ["nvidia"];
-	hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.legacy_470;
-	hardware.nvidia.modesetting.enable = true;
+    ### NVIDIA
+    nixpkgs.config.nvidia.acceptLicense = true;
+    hardware.opengl.enable = true;
+    services.xserver.videoDrivers = ["nvidia"];
+    hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.legacy_470;
+    hardware.nvidia.modesetting.enable = true;
 
 
 
     services.flatpak.enable = true;
 
-  system.stateVersion = "25.11"; # Did you read the comment?
+    system.stateVersion = "25.11"; # Did you read the comment?
 
 }
