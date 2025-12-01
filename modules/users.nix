@@ -2,11 +2,12 @@
 {
 	users.users.ilase = {
 		isNormalUser = true;
-		descriptiom = "Ilya Kusukin";
+		description = "Ilya Kusukin";
 		extraGroups = ["wheel" "docker" "networkmanager"];
 		packages = with pkgs; [
-
+            tmux
+            gnomeExtensions.dash-to-dock
 		];
 		shell = pkgs.zsh;
 	};
-};
+}
