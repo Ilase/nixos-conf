@@ -6,6 +6,7 @@
     		autosuggestions.enable = true;
     		shellAliases = {
     			update = "sudo nixos-rebuild switch --flake .#ideapad-3-laptop";
+    			gcollect = "nix-collect-garbage -d";
     		};
     		histFile = "$HOME/.zsh_history";
     		ohMyZsh = {
