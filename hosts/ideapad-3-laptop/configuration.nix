@@ -9,7 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../../modules/plymouth.nix
-
+      ./nvidia.nix
     ];
 
   # Bootloader.
@@ -75,12 +75,7 @@
 
     nixpkgs.config.allowUnfree = true;
 
-    ### NVIDIA
-    nixpkgs.config.nvidia.acceptLicense = true;
-    hardware.opengl.enable = true;
-    services.xserver.videoDrivers = ["nvidia"];
-    hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.legacy_470;
-    hardware.nvidia.modesetting.enable = true;
+
 
 
 
